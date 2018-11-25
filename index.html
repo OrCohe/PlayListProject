@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PlayList APP</title>
+  <script src="js/jq.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/serverAPI.js"></script>
+  <script src="js/play-class.js"></script>
+  <script src="js/data-class.js"></script>
+  <script src="js/musicPlayer-class.js"></script>
+  <script src="js/modal1-class.js"></script>
+  <script src="js/modal2-class.js"></script>
+  <script src="js/modaldel-class.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/circletype.min.js"></script>
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="icomoon/style.css">
+</head>
+<body>
+    <!-- NavBar -->
+    <div class="navbar fixed-top">
+      <button data-toggle="modal" data-target="#addPlayModal1" class="btn btn-dark btn-s"><span class="icon-add"></span> Add new playlist</button> 
+      <div class="input-group-append" id="dPlay">
+          <input type="text" id="sPlay" placeholder="Search playlist" oninput="pageData.showSpecific()">
+      </div>
+    </div>
+    <div class="container">
+        <!-- MusicPlayer -->
+        <div class="playerContainer sticky-top"></div>
+        <!-- PlayLists -->
+        <div class="row"></div>
+    </div>
+  <!-- Modal 1 -->
+  <div class="modal fade" id="addPlayModal1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1Title">Add new Playlist</h5>
+        </div>
+        <div class="modal-body">
+          <img class="rounded float-right" id="playImg" src="img/noimage.png" height="200px" width="200px">
+          <div>
+            <label>Playlist Name</label> <br>
+            <input type="text" name="Playlist Name" id="playName"> <br>
+          </div>
+          <div>
+            <label>Playlist URL</label> <br>
+            <input type="text" name="Playlist URL" id="playUrl" onchange="changeTempImg()">
+          </div>
+        </div>  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+          <button type="button" class="btn btn-primary" id="modal1Btn" onclick="pageModal1.saveNGoModal2()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 2 -->
+  <div class="modal fade" id="addPlayModal2">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal2Title">Add Playlist Songs</h5>
+        </div>
+        <div id="songsCont" class="modal-body">
+          <p id="errMsg"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="addASongs" class="btn btn-light" onclick="pageModal2.addSongLine()"><span class="icon-add"></span> Add another song</button>
+          <button type="button" id="modal2FinishBtn" class="btn btn-dark float-right" onclick="pageData.addPlay(pageModal1.tempName,pageModal1.tempUrl)" >Finish and Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal3(Delete popup) -->
+  <div class="modal fade" id="delModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="delModal">Alert</h5>
+        </div>
+        <div class="modal-body">
+            Are you sure you want to Delete??
+            <input type="text" name="tarID" id="tarID" hidden>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="pageDelModal.hide()">No</button>
+          <button type="button" class="btn btn-primary" onclick="pageData.delete()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

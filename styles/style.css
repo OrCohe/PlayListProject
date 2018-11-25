@@ -1,0 +1,314 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+* > button {
+        cursor: pointer;
+}
+
+body {
+    background: url('../img/background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    top: 80px;
+    text-align: center;
+    align-items: center;    
+}
+
+.navbar {
+    background-color: rgb(83, 43, 70);
+    height: 60px;
+}
+
+.navbar > * {
+    height: 40px;
+    margin: 10px;
+}
+
+#dPlay {
+    float: right;
+}
+
+#sPlay {
+    height: 100%;
+}
+
+#pListDiv {
+    border-radius: 50%;
+    margin: 10px;
+    height: 250px;
+    width: 250px;
+    position: relative;
+    border: 1px solid black;
+}
+
+#bandImage {
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 50%;
+    opacity: 0.85;
+}
+#bandImage > button {
+    display: none;
+    background-color: white;
+}
+
+#bandImage > button:hover {
+        background-color: grey;
+    }
+
+#bandImage:hover {
+    opacity: 1;
+}
+#bandImage:hover > * {
+    display: inline;
+}
+
+#bandName {
+    position: relative;
+    color: black;
+    height: 5px;
+    left: 10px;
+}
+
+#addASongs {
+    position: relative;
+    float: left;
+}
+
+.modal-content {
+    overflow:auto;
+}
+
+.modal-footer {
+    display: inline;
+}
+
+.modal-body {
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+}
+
+.playNow {
+    position: relative;
+    text-align: center;
+}
+
+#errMsg {
+    color: red;
+    display: none;
+}
+
+#lineDiv {
+    display: inline-flex;
+}
+
+#btnPlay {
+    position: relative;
+    bottom: 160px;
+    padding: 5px;
+    left: 38px;
+    border-radius: 50%;
+    font-size: 40px;
+    border: 1px solid transparent;
+    background-color: white;
+}
+#btnDel {
+    position: relative;
+    padding: 5px;
+    bottom: 270px;
+    right: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+    border: 1px solid transparent;
+    background-color: #fff;
+}
+#btnEdit {
+    position: relative;
+    padding: 5px;
+    bottom: 270px;
+    right: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    border: 1px solid transparent;
+    background-color: #fff;
+}
+
+.playing {
+    -webkit-animation: rotation 3s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
+
+#delLineBtn {
+    height: 30px;
+    margin-left: 10px;
+}  
+
+#songName {
+    margin-right: 30px;
+}
+
+.playCont {
+    position: sticky;
+    top: 80px;
+    border-radius: 200px;
+    margin: 0 auto;
+    height: 350px;
+    width: 70%;
+    background-color: rgb(131, 65, 106);
+    margin-bottom: 20px;
+    display: none;
+    z-index: 100;
+}
+
+.playCont > p {
+    position: absolute;
+    top: 2%;
+    left: 40%;
+    width: 40%;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+
+#playerImage {
+    position: relative;
+    top: 10px;
+} 
+
+#playerImage > img {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 0;
+    top: 15px;
+    right: 25%;
+} 
+.songsList {
+    position: relative;
+    bottom: 240px;
+    left: 11%;
+    width: 30%;
+    height: 60%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-all;
+}
+.songsList > span {
+    display: block;
+    text-decoration: underline;
+    opacity: 0.5;
+}
+.songsList > span:hover {
+        display: block;
+        opacity: 1;
+        cursor: pointer;
+    }
+.hoverPlay {
+        visibility: hidden;
+}
+.hoverPlay:hover {
+        visibility: visible;
+}
+.linePlaying {
+        opacity: 1 !important;
+        font-weight: bold;
+}
+#playNow {
+    position: relative;
+    bottom: 260px;
+    left: 100px;
+}
+
+.row {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.playerContainer {
+    width: 100%;
+    background-color: transparent;
+    z-index: 99;
+    top: 80px;
+}
+
+#playerPlay {
+    position: relative;
+    top: 25px;
+    padding: 5px;
+    right: 370px;
+    border-radius: 50%;
+    font-size: 40px;
+    border: 1px solid transparent;
+    background-color: white;
+}
+#playerDel {
+    position: relative;
+    padding: 5px;
+    bottom: 430px;
+    left: 54%;
+    border-radius: 50%;
+    border: 1px solid black;
+    border: 1px solid transparent;
+    background-color: white;
+}
+#playerEdit {
+    position: relative;
+    padding: 5px;
+    bottom: 370px;
+    left: 50.5%;
+    border-radius: 50%;
+    border: 1px solid black;
+    border: 1px solid transparent;
+    background-color: white;
+}
+
+#playerEdit:hover {
+        background-color:grey;
+}
+#playerDel:hover {
+        background-color:grey;
+}
+#playerPlay:hover {
+        background-color:grey;
+}
+
+.icon-add {
+        color: white;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(104, 48, 104);
+}
+
